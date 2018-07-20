@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:id="@+id/main_layout">
+
+
+    <Spinner
+        android:id="@+id/list_of_parameters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/bottom_bar"
+        android:padding="32dp"
+
+        android:textAlignment="center"></Spinner>
+
+    <Button
+        android:id="@+id/select_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Project"
+        android:gravity="center"
+        android:id="@+id/search_project_button"/>
+
+</LinearLayout>
