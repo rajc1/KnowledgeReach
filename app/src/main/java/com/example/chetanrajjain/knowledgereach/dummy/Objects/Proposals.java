@@ -1,5 +1,5 @@
 
-package com.example.chetanrajjain.knowledgereach;
+package com.example.chetanrajjain.knowledgereach.dummy.Objects;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -41,8 +41,30 @@ public class Proposals{
     private String title;
     @SerializedName("costToComplete")
     private String costToComplete;
-    @SerializedName("state")
+    @SerializedName("stateFullName")
     private String state;
+
+    public String getPaymentLink() {
+        return paymentLink;
+    }
+
+    public void setPaymentLink(String paymentLink) {
+        this.paymentLink = paymentLink;
+    }
+
+    @SerializedName("fundURL")
+    private String paymentLink;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @SerializedName("shortDescription")
+    private  String description;
 
 
 

@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:id="@+id/listview_filter"></ListView>
+        android:id="@+id/list_of_project"></ListView>
 
 </LinearLayout>

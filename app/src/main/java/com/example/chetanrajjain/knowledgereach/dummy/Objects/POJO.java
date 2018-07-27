@@ -1,12 +1,17 @@
-package com.example.chetanrajjain.knowledgereach;
+package com.example.chetanrajjain.knowledgereach.dummy.Objects;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class POJO{
+public class POJO implements Parcelable
+{
     @SerializedName("searchTerms")
     private  String searchTerm;
+
 
     public String getSearchTerm() {
         return searchTerm;
@@ -28,4 +33,13 @@ public class POJO{
     @SerializedName("proposals")
     private ArrayList<Proposals> proposals = new ArrayList<>();
 
-        }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
+}
