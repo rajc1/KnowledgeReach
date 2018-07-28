@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="60dp">
+    android:layout_height="40dp">
 
     <TextView
         android:id="@+id/each_filter_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:textColor="@android:color/black"
+        android:gravity="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20dp" />
+        //tools:textColor="@android:color/black"
         android:layout_gravity="center"/>
 
 </LinearLayout>

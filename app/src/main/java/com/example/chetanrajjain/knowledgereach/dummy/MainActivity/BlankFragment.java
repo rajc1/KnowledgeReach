@@ -21,11 +21,6 @@ import android.widget.TextView;
 
 import com.example.chetanrajjain.knowledgereach.R;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,7 +63,7 @@ public class BlankFragment extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_blank, container, false);
+        View v = inflater.inflate(R.layout._1fragment_blank1, container, false);
         listView = v.findViewById(R.id.listview_filter);
         listView.setAdapter(new FilterAdapter(context,R.layout.each_filter_item));
         //listView.setAdapter(getContext(),

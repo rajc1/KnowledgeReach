@@ -44,6 +44,38 @@ public class Proposals{
     @SerializedName("stateFullName")
     private String state;
 
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public String getNoofStudent() {
+        return noofStudent;
+    }
+
+    public void setNoofStudent(String noofStudent) {
+        this.noofStudent = noofStudent;
+    }
+
+    @SerializedName("teacherName")
+    private String teacherName;
+    @SerializedName("numStudents")
+    private String noofStudent;
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    @SerializedName("totalPrice")
+    private String total;
+
     public String getPaymentLink() {
         return paymentLink;
     }
@@ -65,6 +97,18 @@ public class Proposals{
 
     @SerializedName("shortDescription")
     private  String description;
+
+
+    public GradeLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(GradeLevel level) {
+        this.level = level;
+    }
+
+    @SerializedName("gradeLevel")
+    private GradeLevel level;
 
 
 

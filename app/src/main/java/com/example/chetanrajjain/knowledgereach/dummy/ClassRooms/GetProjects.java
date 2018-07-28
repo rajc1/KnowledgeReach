@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,27 +34,39 @@ public class GetProjects extends AppCompatActivity implements BlankFragment2.set
     private TextView project_name;
     private TextView project_c2c;
     private TextView state;
+    private TextView total;
     private TextView description;
     private ImageView imageView;
+    private TextView Gradelevel;
+    private TextView teacherName;
+    private TextView noOfStd;
     private POJO pojo;
     private FragmentManager fm;
     private Fragment fragment;
     private TextView payment_link;
+    private String subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_projects);
+        setContentView(R.layout._2activity_get_projects);
         project_name = findViewById(R.id.project_name_activity);
         project_c2c  =  findViewById(R.id.cost_activity);
         state = findViewById(R.id.project_state_activity);
+        total = findViewById(R.id.total_activity);
         imageView = findViewById(R.id.project_image_activity);
         payment_link = findViewById(R.id.payment_link_activity);
         description = findViewById(R.id.project_desc);
+        View innerLayout = findViewById(R.id.grade2);
+        Gradelevel = innerLayout.findViewById(R.id.grade_view);
+        teacherName = innerLayout.findViewById(R.id.teacher_view);
+        noOfStd = innerLayout.findViewById(R.id.num_of_view);
             parameter = getIntent().getStringExtra("parameter");
+            Log.i("p",parameter);
+            subject = getIntent().getStringExtra("filtername");
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.donorschoose.org").addConverterFactory(GsonConverterFactory.create()).build();
         NetworkCall getservice = retrofit.create(NetworkCall.class);
-        Call<POJO> call = getservice.getProjects("65018","DONORSCHOOSE");
+        Call<POJO> call = getservice.getProjects(parameter,"DONORSCHOOSE");
         call.enqueue(new Callback<POJO>() {
             @Override
             public void onResponse(Response<POJO> response, Retrofit retrofit) {
@@ -83,9 +96,13 @@ public class GetProjects extends AppCompatActivity implements BlankFragment2.set
     public void setProject(int position) throws IOException {
         project_name.setText(pojo.getProposals().get(position).getTitle());
         project_c2c.setText("$"+pojo.getProposals().get(position).getCostToComplete());
+        total.setText("$"+pojo.getProposals().get(position).getTotal());
         state.setText(pojo.getProposals().get(position).getState());
         description.setText(pojo.getProposals().get(position).getDescription());
         payment_link.setText(pojo.getProposals().get(position).getPaymentLink());
+        Gradelevel.setText(pojo.getProposals().get(position).getLevel().getLevel());
+        teacherName.setText(pojo.getProposals().get(position).getTeacherName());
+        noOfStd.setText("Strength:"+pojo.getProposals().get(position).getNoofStudent());
         new ImageLoader(pojo.getProposals().get(position).getImageURL(),200,200)
                 .execute(pojo.getProposals().get(position).getImageURL());
         Log.i("image uri",pojo.getProposals().get(position).getImageURL());

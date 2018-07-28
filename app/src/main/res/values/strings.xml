@@ -19,7 +19,8 @@
     </string-array>
 
     <string-array name="filter_list">
-        <item>Performing Arts</item>
+        <item>None</item>
+        <item>Music-Arts</item>
         <item> Visual Arts</item>
         <item>Music</item>
         <item>Sports</item>
@@ -27,6 +28,11 @@
         <item>Economics</item>
         <item>Mathematics</item>
     </string-array>
+
+    <string name="Nutritions">subject2=28</string>
+    <string name="Sports">subject2=2</string>
+    <string name="Economics">subject3=14</string>
+    <string name="Mathematics">subject4=8</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

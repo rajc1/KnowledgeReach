@@ -3,28 +3,20 @@ package com.example.chetanrajjain.knowledgereach.dummy.ClassRooms;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.chetanrajjain.knowledgereach.R;
 import com.example.chetanrajjain.knowledgereach.dummy.Objects.POJO;
-import com.example.chetanrajjain.knowledgereach.dummy.Objects.Proposals;
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 
@@ -66,14 +58,14 @@ public class BlankFragment2 extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
+        View v = inflater.inflate(R.layout._2fragment_blank_fragment2, container, false);
         // pojo = getArguments().getBundle("pojo");
 
         pojo = getArguments().getBundle("pojo");
         list_proposal = getArguments().getParcelable("projects list");
         //    tv.setText(list_proposal.getProposals().get(1).getTitle());
         lif_of_projects = v.findViewById(R.id.list_of_project);
-        lif_of_projects.setAdapter(new FilterAdapter(context,R.layout.each_project));
+        lif_of_projects.setAdapter(new FilterAdapter(context,R.layout._2each_project));
         lif_of_projects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -106,7 +98,7 @@ public class BlankFragment2 extends android.app.Fragment {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 //        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View rowview = LayoutInflater.from(getContext()).inflate(R.layout.each_project,parent,false);
+            View rowview = LayoutInflater.from(getContext()).inflate(R.layout._2each_project,parent,false);
             // inflater.inflate(R.layout.each_filter_item,parent,false);
             project_name = rowview.findViewById(R.id.project_name);
             costTocomplete = rowview.findViewById(R.id.cost_to_complete);
